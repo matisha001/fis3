@@ -1,0 +1,368 @@
+/**
+理财专区样式
+**/
+body,html{
+	height: 100%;
+}
+.financial-wrap{
+	padding: 20px 0 60px;
+	background-color: #F0F1F1;
+}
+.financial{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.financial .fl{
+	width: 298px;
+}
+.financial .fl li{
+	width: 100%;
+	height: 75px;
+	line-height: 75px;
+	border-bottom: 1px solid #E1E1E1;
+	
+}
+.financial .fl li a{
+	padding-left: 40px;
+	display: inline-block;
+	width: 258px;
+	height: 100%;
+
+	
+	background-color: #fff;
+}
+.financial .fl li a span{
+	color: #FF9900;
+}
+.financial .fl li a:hover{
+	color: #fff;
+	background-color: #FF9900;
+}
+.financial .fl li a:hover span{
+	color: #fff;
+}
+
+.financial .fl li a.financial-item-active{
+	color: #fff;
+	background-color: #FF9900;
+}
+.financial .fl li a.financial-item-active span{
+	color: #fff;
+}
+
+.financial-item{
+	display: none;
+	width: 885px;
+}
+.financial-item-banner{
+	width: 885px;
+	height: 235px;
+}
+.financial-item-banner a{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+.financial-item-banner img{
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+	/*互金*/
+.top{
+	background: url(../images/top.png) no-repeat 0 0;
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	padding-right: 5px;
+}
+.financial-item1{
+	display: block;
+}
+
+.financial-item1-select{
+	background-color: #FAFBFB;
+	border-bottom: 1px solid #F0F1F1;
+	height: 89px;
+	overflow-y: hidden;
+}
+
+
+.financial-item1-select div{
+	padding: 15px 0;
+	margin: 0 40px;
+	border-bottom:  1px solid #F0F1F1;
+	font-size: 14px;
+}
+
+.financial-item1-select span{
+	display: inline-block;
+	width: 60px;
+	color: #999999;
+}
+.financial-item1-select a{
+	padding-right: 45px;
+	color: #999999;
+}
+.financial-item1-select  .financial-is-select{
+	color: #FF9900;
+}
+.financial-item1-select i{
+	margin-left: 5px;
+}
+.financial-item1-select a:hover{
+	color: #ff9900;
+}
+.financial-item1-select  i{
+	display: none;
+}
+
+.financial-item-pordoct{
+	padding: 50px 40px;
+	background-color: #fff;
+}
+.financial-item1 .financial-item-pordoct{
+	padding: 0 40px 50px;
+	background-color: #fff;
+}
+.financial-item-list li{
+	height: 135px;
+	border-bottom: 1px dashed #EDEDED;
+}
+
+.financial-item-contain{
+	padding: 30px 0;
+}
+.financial-item-contain h3{
+	font-size: 20px;
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+}
+.financial-item-contain h3 a:hover{
+	color: #FF9900;
+}
+
+.financial-item-contain h3 .overflow{
+	width: 500px;
+	display: inline-block;
+}
+.financial-item-contain .financial-tags{
+	color: #FF9900;
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	padding: 0 20px;
+	display: inline-block;
+	border: 1px solid #FF9900;
+	margin: 0 2px;
+	border-radius: 10px;
+}
+.financial-item-contain h3 .icon37{
+	font-size: 12px;
+	margin-left: 10px;
+}
+
+.financial-item-contain-data{
+	width: 100%;
+}
+
+.financial-item-contain-data a{
+	color: #fff;
+}
+.financial-item-contain-data div{
+	float: left;
+	/*padding-right: 70px;*/
+}
+.financial-item-contain-data .financial-hujin-rate{
+	width: 140px;
+}
+.financial-item-contain-data .financial-hujin-year{
+	width: 100px;
+}
+.financial-item-contain-data .financial-hujin-amount{
+	width: 160px;
+}
+.financial-item-contain-data .financial-hujin-type{
+	width: 200px;
+}
+.financial-item-contain-data a{
+	float: right;
+}
+.financial-item-contain-data p{
+	font-size: 15px;
+	height: 30px;
+}
+.financial-item-contain-data h4{
+	color: #B4B4B4;
+    font-size: 14px;
+}
+.financial-item-contain-data .financial-year-rate{
+	color: #FF9900;
+	font-size: 22px;
+}
+
+
+
+/**
+理财详情样式
+**/
+
+.financial-hujin-wrap{
+	background-color: #F0F1F1;
+	padding: 20px 0 40px;
+}
+.financial-hujin{
+	height: 350px;
+	width: 1135px;
+	margin: 0 auto;
+	background-color: #fff;
+	margin-bottom: 20px;
+	padding-left: 65px;
+}
+.financial-hujin .fl{
+	width: 740px;
+	height: 350px;
+	padding-right: 40px;
+	border-right: 1px solid #E5E5E5;
+}
+
+.financial-hujin .fl h3{
+	height: 80px;
+	line-height: 80px;
+	width: 100%;
+	border-bottom: 1px solid #E5E5E5;
+	overflow: hidden;
+}
+.financial-hujin .fl i{
+	float: right;
+	font-size: 16px;
+}
+
+.financial-hujin-data{
+	padding: 40px 0;
+	border-bottom: 1px solid #E5E5E5;
+}
+
+.financial-hujin-data div{
+	float: left;
+	padding-left: 20px;
+}
+.financial-hujin-rate{
+	width: 210px;
+}
+.financial-hujin-year{
+	width: 100px;
+	padding: 0 40px;
+}
+.financial-hujin-amount{
+	width: 300px;
+}
+.financial-hujin-data p{
+	font-size: 40px;
+	padding-bottom: 10px;
+}
+.financial-hujin-data .financial-hujin-year-rate{
+	color: #FF9900;
+}
+.financial-hujin-data span{
+	font-size: 12px;
+	color: #000;
+}
+.financial-hujin-year-rate span{
+	color:#FF9900;
+}
+.financial-hujin-data h4{
+	color:#B4B4B4;
+	font-size: 14px;
+}
+.financial-hujin .fr{
+	width: 354px;
+	text-align: center;
+}
+.financial-hujin .fr .financial-hujin-btn{
+	display: inline-block;
+	width: 80%;
+	background-color: #FF9900;
+	color: #fff;
+	height: 40px;
+	margin-top: 157px;
+	line-height: 40px;
+	border-radius: 5px;
+}
+.financial-hujin .fr .overflow{
+	width: 80%;
+	padding-top: 10px;
+	font-size: 14px;
+	margin: 0 auto;
+	text-align: left;
+}
+.financial-hujin-news{
+	padding-top: 30px;
+}
+.financial-hujin-news p{
+	line-height: 35px;
+	font-size: 14px;
+}
+.financial-hujin-fl{
+	float: left;
+	text-align: left;
+}
+.financial-hujin-fr{
+	float: right;
+	text-align: right;
+}
+
+
+.financial-hujin-wrap .financial-tabs{
+	width: 1200px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+.financial-hujin-wrap .financial-tab {
+	height: 60px;
+	line-height: 60px;
+	background-color: #F9F9F9
+}
+
+.financial-hujin-wrap .financial-tab  li{
+	float: left;
+}
+.financial-hujin-wrap .financial-tab  li a{
+ 	font-size: 15px;
+ 	padding: 15px 60px 20px;
+ 	border-top: 5px solid #F9F9F9;
+}
+/*.financial-hujin-wrap .financial-tab  li a:hover{
+ 	border-top: 5px solid #FF9900;
+ 	background-color: #fff;
+ 	color: #FF9900;
+}*/
+.financial-hujin-wrap .financial-tab  li a.financial-tab-active{
+	border-top: 5px solid #FF9900;
+ 	background-color: #fff;
+ 	color: #FF9900;
+}
+.financial-hujin-wrap .financial-tab-contain{
+	width: 900px;
+	margin:0 150px;
+	padding: 45px 0;
+	display: none;
+	overflow-x: auto;
+}
+
+.financial-tab-problems{
+	font-size: 16px;
+	font-weight: bold;
+	padding: 30px 0;
+}
+.financial-tab-problems span{
+	color: #ff9900;
+}
+.financial-tab-problems div{
+	width: 100%;
+}

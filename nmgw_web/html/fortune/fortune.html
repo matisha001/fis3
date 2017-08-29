@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>财富专区-纳觅财富</title>
+    <link rel="import" href="../common.html?__inline">
+    <link rel="stylesheet" type="text/css" href="../../css/financial.css">
+    <style type="text/css">
+        .header .nav-fortune a {
+            color: #f3981c;
+        }
+    </style>
+</head>
+<h1 style="display: none">互联网金融,理财,投资,金融,贷款,纳觅财富,第三方平台,可靠的金融机构,金融机构排名,投资理财</h1>
+<body>
+<link rel="import" href="../header.html?__inline">
+  <div class="navPages">
+      <div class="navPagesTopnav">
+          您现在的位置：<a href="webHomeUrl/index">首页＞</a><a href="#">财富专区  </a>
+
+      </div>
+  </div>
+    <div class="financial-wrap">
+        <div class="financial clearfix">
+            <ul class="fl financial-tabs">
+
+            </ul>
+            <div class="fr">
+            	    <!-- 互金 -->
+                    <div class="financial-item financial-item1">
+                            <div class='financial-item1-select'>
+                              <div class="istime">
+                                <span>期限:</span>
+                                <a href="javascript:;" data-deadline='0' class="financial-is-select">全部</a>
+                                <a href="javascript:;" data-deadline='1'>3个月以下</a>
+                                <a href="javascript:;" data-deadline='2'>3~6个月</a>
+                                <a href="javascript:;" data-deadline='3'>6~9个月</a>
+                                <a href="javascript:;" data-deadline='4'>9~12个月</a>
+                                <a href="javascript:;" data-deadline='5'>12个月以上</a>
+                              </div>
+                              <div class="issort">
+                                <span>排序:</span>
+                                <a href="javascript:;" class="sort financial-is-select" data-order="0" class="financial-is-select" orderby="0">发布时间<i class="icon icon53"></i></a>
+                                <a href="javascript:;" class="sort" data-order="1" orderby="0">收益<i class="icon icon53"></i></a>
+                                <a href="javascript:;" class="sort" data-order="2" orderby="0">期限<i class="icon icon53"></i></a>
+                              </div>
+                            </div>
+                            <div class="financial-item-pordoct hujin-template">
+
+                            </div>
+                      </div>
+      				<!-- 基金 -->
+      				<div class="financial-item financial-item2">
+                        <div class="financial-item-pordoct">暂无相关产品</div>
+      				</div>
+      				<!-- 保险 -->
+      				<div class="financial-item financial-item3">
+
+                        <div class="financial-item-pordoct">暂无相关产品</div>
+      				</div>
+      				<!-- 定期 -->
+      				<div class="financial-item  financial-item4">
+
+                        <div class="financial-item-pordoct">暂无相关产品</div>
+      				</div>
+      				<!-- 活期 -->
+      				<div class="financial-item  financial-item5">
+
+                        <div class="financial-item-pordoct">暂无相关产品</div>
+      				</div>
+            </div>
+        </div>
+    </div>
+<link rel="import" href="../footer.html?__inline">
+</body>
+
+<!-- 理财类型 -->
+<script type="text/html"   id="num-template">
+<% for ( var i = 0; i < data.length; i++ ) { %>
+    <% if(i==active){%>
+    <li onclick="changetabs($(this))"><a href="javascript:;" id="hujinbtn" class="financial-item-active"><%=data[i].financialTopName%>(<span><%=data[i].financialCount%></span>)</a></li>
+    <% }else{ %>
+        <li onclick="changetabs($(this))"><a href="javascript:;" id="hujinbtn"><%=data[i].financialTopName%>(<span><%=data[i].financialCount%></span>)</a></li>
+    <% } %>
+<% } %>
+</script>
+<script type="text/html"  id="hujin-template">
+    <ul class="financial-item-list">
+        <% for ( var i = 0; i < list.length; i++ ) {
+        %>
+        <li>
+            <div class="financial-item-contain">
+                <h3>
+                    <a href="./fortune-detail.html?id=<%=list[i].productNum%>">
+                        <% if(list[i].recommendType==1){%>
+                        <span class="top"></span><span><%=list[i].productName%></span>
+                        <%}else{%>
+                        <span><%=list[i].productName%></span>
+                        <% } %>
+                        <%
+                        if(list[i].prodTags){
+                        for (var j=0;j< list[i].prodTags.length; j++ ) {
+                        %>
+                        <span class="financial-tags"><%=list[i].prodTags[j]%></span>
+                        <%
+                        }
+                        }
+                        %>
+                    </a>
+                </h3>
+                <div class="financial-item-contain-data">
+
+                    <%if(list[i].expectedAnnualized){%>
+                    <div  class="financial-hujin-rate">
+                        <p class="financial-year-rate"><%=list[i].expectedAnnualized%>%</p>
+                        <h4>预计年化率</h4>
+                    </div>
+                    <%}%>
+
+                    <%if(list[i].deadlineType==2&&list[i].investDeadline){%>
+                    <div class="financial-hujin-year">
+                        <p><%= Math.ceil(list[i].investDeadline/30) %>个月</p>
+                        <h4>期限</h4>
+                    </div>
+                    <%}else if(list[i].investDeadline){%>
+                    <div class="financial-hujin-year">
+                        <p><%=list[i].investDeadline%>天</p>
+                        <h4>期限</h4>
+                    </div>
+                    <%}%>
+
+                    <%if(list[i].projectAmount){%>
+                    <div class="financial-hujin-amount">
+                        <p><%=list[i].projectAmount/10000 %>万</p>
+                        <h4>项目金额</h4>
+                    </div>
+                    <%}%>
+
+
+                    <%if(list[i].repaymentTypeStr){%>
+                    <div class="financial-hujin-type">
+                        <p><%=list[i].repaymentTypeStr%></p>
+                        <h4>还款方式</h4>
+                    </div>
+                    <%}%>
+
+
+                    <%if(list[i].productNum){%>
+                    <a href="./fortune-detail.html?id=<%=list[i].productNum%>" class="icon icon14">立即购买</a>
+                    <%}%>
+
+
+                </div>
+            </div>
+        </li>
+        <% } %>
+    </ul>
+    <% if( 1 < pager.curPage) { %>
+    <div class="tcdPageCode">
+        <% if(pager.curPage == 1) { %>
+        <span class="disabled">上一页</span>
+        <%}else{%>
+        <a href="javascript:;" class="prevPage btn">上一页</a>
+        <%}%>
+        <% if(pager.totalPage < 6) {
+        for(var i = 1; i <= pager.totalPage; i++ ){
+        %>
+        <% if(pager.curPage == i) { %>
+        <span class="current"><%=i%></span>
+        <%}else{%>
+        <a href="javascript:;" class="tcdNumber"><%=i%></a>
+        <%}}}else{
+        for(var i = 1; i <= 4; i++ ){
+        %>
+        <% if(pager.curPage == i) { %>
+        <span class="current"><%=i%></span>
+        <%}else{%>
+        <a href="javascript:;" class="tcdNumber"><%=i%></a>
+        <%}}%>
+        <span>...</span>
+        <% if(pager.curPage == pager.totalPage) { %>
+        <span class="current"><%=pager.totalPage%></span>
+        <%}else{%>
+        <a href="javascript:;" class="tcdNumber"><%=pager.totalPage%></a>
+        <%}}%>
+        <% if(pager.curPage == pager.totalPage) { %>
+        <span class="disabled">下一页</span>
+        <%}else{%>
+        <a href="javascript:;" class="btn nextPage">下一页</a>
+        <%}%>
+    </div>
+    <%}%>
+</script>
+
+<script type="text/html"   id="pic-template">
+    <% for ( var i = 0; i < data.length; i++ ) { %>
+    <div class="financial-item-banner">
+        <a href="#">
+            <img src="<%=data[i].financialTopTypeImg%>">
+        </a>
+    </div>;
+    <% } %>
+</script>
+
+<script type="text/javascript">
+    var numTemplate=$("#num-template").html();
+    var htmlTemp=$("#hujin-template").html();
+    var picTemp=$("#pic-template").html();
+    var topType=getQueryString("topType");
+    $.ajax({
+        url: 'webHomeUrl/fin/index/v1/financialIndex.do',
+        type: 'post',
+        dataType: 'json',
+        success:function(data){
+          if(data.code=="00000"){
+              data1=data.data;
+
+              data1.forEach(function(object) {
+                if(!object.financialCount){
+                  object.financialCount=0;
+                }
+              });
+              if(topType){
+                  data.active=topType-1;
+              }else{
+                  data.active=0
+              }
+              $(".financial-item"+topType).show().siblings('.financial-item').hide();
+              var html=tmpl(numTemplate, data);
+              var array=tmpl(picTemp, data).split(";")
+              var test =array.slice(0,array.length-1)
+              $(".financial>.fl").html(html);
+              test.forEach(function(object,index){
+                  $(".financial-item"+(index+1)).prepend(object)
+              })
+          }else{
+              // alert(data.errorMsg)
+              $(".financial>.fl").html("<div style='color:red;text-align: center;'>"+data.errorMsg+"</div>");
+          }
+          
+        }
+    });
+function changetabs(a){
+  var index=$(".financial-tabs>li").index(a)+1;
+  $(a).find("a").addClass("financial-item-active")
+  $(a).siblings('li').find("a").removeClass("financial-item-active");
+  $(".financial-item"+index).show().siblings('.financial-item').hide();
+}
+
+    //初始化互金产品列表
+    getHujin();
+  // 期限 排序字段 排序方式
+  function getHujin(deadline,orderByField,orderByType,pageNum,pageSize){
+      deadline=deadline||0;
+      orderByField= orderByField || 0;
+      orderByType= orderByType || 0;
+      pageNum= pageNum || 1;
+      pageSize= pageSize ||5;
+      $.ajax({
+          url: 'webHomeUrl/fin/product/v1/productList.do',
+          type: 'post',
+          dataType: 'json',
+          data:{
+              deadline:deadline,
+              orderByField:orderByField,
+              orderByType:orderByType,
+              pageNum:pageNum,
+              pageSize:pageSize
+          },
+          success:function(data){
+              if(data.code=="00000"){
+                  var listdata=data.data
+                  var hujin= tmpl(htmlTemp, listdata)
+                  $(".hujin-template").html(hujin)
+                  //分页
+                  $(".tcdPageCode").on("click","a",function(){
+                      //期限
+                      var t=$(".istime").find(".financial-is-select").data('deadline')
+                      // 排序类型
+                      var m=$(".issort").find(".financial-is-select").data('order')
+                      //升降序
+                      var k=$(".issort").find(".financial-is-select").attr('orderby')
+
+                      var p=Number($(".current").html());
+
+                      if($(this).hasClass('btn')){
+                          if($(this).hasClass('nextPage')){
+                              getHujin(t,m,k,p+1)
+                          }else{
+                              getHujin(t,m,k,p-1)
+                          }
+                      }else{
+                          getHujin(t,m,k,$(this).html())
+                      }
+                      $("body, html").animate({scrollTop: 200});
+                  })
+              }else{
+                  // alert(data.errorMsg)
+                  $(".hujin-template").html("<div style='color:red;text-align: center;'>"+data.errorMsg+"</div>");
+              }
+
+          }
+      });
+  }
+  //筛选互金产品
+  var isDesc = true;
+  $(".sort:eq(0)").children('i').css("display","inline-block")
+  $(".financial-item1-select").on("click",'a',function(){
+      if($(this).parent("div").hasClass("istime")){
+          $(".istime").children('a').removeClass("financial-is-select")
+      }
+      if($(this).parent("div").hasClass("issort")){
+          $(".issort").children('a').removeClass("financial-is-select");
+          $(".sort").children('i').hide()
+          if(isDesc){
+              //降序
+              $(this).children('i').css({"backgroundPosition":"-327px -10px","display":"inline-block"})
+              $(this).attr("orderby",0)
+          }else{
+              //升续
+              $(this).children('i').css({"backgroundPosition":"-331px -197px","display":"inline-block"})
+              $(this).attr("orderby",1)
+          }
+          isDesc =!isDesc;
+      }
+      $(this).addClass("financial-is-select");
+      //期限
+      var t=$(".istime").find(".financial-is-select").data('deadline')
+      // 排序类型
+      var m=$(".issort").find(".financial-is-select").data('order')
+      //升降序
+      var k=$(".issort").find(".financial-is-select").attr('orderby')
+
+      var p=Number($(".current").html());
+      getHujin(t,m,k,p)
+  })
+
+
+
+</script>
+</html>

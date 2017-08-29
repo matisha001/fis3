@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>互金详情</title>
+    <link rel="import" href="../common.html?__inline">
+    <link rel="stylesheet" type="text/css" href="../../css/financial.css">
+    <style type="text/css">
+        .header .nav-fortune a {
+            color: #f3981c;
+        }
+    </style>
+</head>
+<h1 style="display: none">互联网金融,理财,投资,金融,贷款,纳觅财富,第三方平台,可靠的金融机构,金融机构排名,投资理财</h1>
+<body>	
+<link rel="import" href="../header.html?__inline">
+<div class="navPages">
+    <div class="navPagesTopnav">
+        您现在的位置：<a href="webHomeUrl/index">首页＞</a>
+        <a href="webHomeUrl/fortune/fortune.html">财富专区＞</a>
+        <a href="#">互金详情</a>
+    </div>
+</div>
+<div class="financial-hujin-wrap clearfix">
+</div>
+<script type="text/html"  id="hujin-detail-template">
+<div class="financial-hujin financial-item-contain">
+	<div class="fl">
+		<h3>
+            <span><%=productName%></span>
+            <%
+              if(productTagsName){
+                for (var j=0;j< productTagsName.length; j++ ) {
+            %>
+            <span class="financial-tags"><%=productTagsName[j]%></span>
+            <%
+                }
+              }
+            %>
+            <i><%=subName%></i>
+		</h3>
+		<div class="financial-hujin-data clearfix">
+			<div class="financial-hujin-rate">
+               <p class="financial-hujin-year-rate"><%=expectedAnnualized%><span>%</span></p>
+               <h4>预计年化率</h4>
+			</div>
+			<div class="financial-hujin-year">
+				<p><%=investDeadline%><span>天</span></p>
+               <h4>期限</h4>
+			</div>
+			<div class="financial-hujin-amount">
+               <p><%= projectAmount %><span>元</span></p>
+               <h4>项目金额</h4>
+			</div>
+		</div>
+        <div class="financial-hujin-news">
+            <div class="financial-hujin-fl">
+                <p>起息日：项目进入锁定期开始计息</p>
+                <p>产品类型：<%= secondTypeName %></p>
+            </div>
+            <div class="financial-hujin-fr">
+                <p>还款方式：<%= repaymentTypeStr %></p>
+                <p>产品来源：<%= projectSource %></p>
+            </div>
+        </div>
+	</div>
+    <div class="fr">
+        <% if(isLogin) {%>
+        <a href="<%= projectUrl %>" class="financial-hujin-btn">去投资</a>
+        <p class="overflow"><%= minInvestAmount %>元起投，单笔限投<%= maxInvestAmount %>元</p>
+        <% }else{%>
+        <a href="<%= userLoginUrl %>" class="financial-hujin-btn">请先登录</a>
+        <p style="text-align: center;" class="overflow">没有账户?请先<a href="<%= userRegistUrl %>" style="text-decoration:underline">注册</a>
+        <% }%>
+    </div>
+</div>
+<div class="financial-tabs">
+	<ul class="financial-tab">
+		<li><a href="javascript:;" class="financial-tab-active">项目介绍</a></li>
+		<li><a href="javascript:;" >常见问题</a></li>
+	</ul>
+	<div class="financial-tab-contain financial-tab1">
+		<%= productContent %>
+	</div>
+	<div class="financial-tab-contain  financial-tab2">
+		<% 
+          if(problems){
+            for (var i=0;i< problems.length; i++ ) {
+        %>
+		<h2 class="financial-tab-problems"><span style="color: #ff9900">Q：</span><%= problems[i].problemName %></h2>
+        <div><%= problems[i].problemContent %></div>
+		<% 
+            }
+          }
+        %> 
+	</div>
+</div>
+
+</script>
+
+<script type="text/javascript">
+	var Template=$("#hujin-detail-template").html();
+	var getQuery=getQueryString("id")
+
+	if(!getQuery){
+		$(".financial-hujin-wrap").html("<div style='color:red;text-align: center;line-height:600px;'>参数错误</div>");
+	}else{
+		var hujin='';
+		$.ajax({
+	        url:  'webHomeUrl/fin/product/v1/productDetail.do',
+	        type: 'post',
+	        dataType: 'json',
+	        data:{
+	        	productNum:getQuery
+	        },
+	        success:function(data){
+	          if(data.code=="00000"){
+	              data=data.data;
+                  if(!isLogin){
+                      data.isLogin=false;
+                      data.userLoginUrl=userLoginUrl+"?redirect_url="+document.URL;
+                      data.userRegistUrl=userRegistUrl;
+                  }else{
+                      data.isLogin=true;
+                  }
+	            hujin= tmpl(Template, data)
+	            $(".financial-hujin-wrap").html(hujin);
+	            $(".financial-tab1").show()
+				$(".financial-tab li>a").click(function(){
+					index=$(".financial-tab li>a").index(this)+1;
+					$(".financial-tab"+index).show().siblings(".financial-tab-contain").hide();
+					$(".financial-tab li>a").removeClass("financial-tab-active")
+					$(this).addClass('financial-tab-active');
+				})
+	          }else{
+	              $(".financial-hujin-wrap").html("<div style='color:red;text-align: center;line-height:600px;'>"+data.errorMsg+"</div>");
+	          }
+	          
+	        }
+	    });	
+	}
+	</script>
+<link rel="import" href="../footer.html?__inline">
+</body>
+</html>

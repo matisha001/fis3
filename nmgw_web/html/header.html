@@ -1,0 +1,49 @@
+<div class="header">
+    <div class="header-state">
+        <div class="head">
+            <div class="fl">客服热线：400-831-0855 (服务时间 9:00-18:00)</div>
+            <div class="fr">
+                <script type="text/html" id="head-template">
+                    <%
+					if(userStatus==0){
+
+					%>
+                        <span class="icon icon54"></span>
+                        <a href="<%=userLoginUrl%>">登录</a>
+                        <span class="head-span">|</span>
+                        <a href="<%=userRegistUrl%>">注册</a>
+                        <%}else{%>
+                            <a href="<%=userCenterUrl%>">
+                                <%=userName%>
+                            </a>
+                            <span class="head-span">|</span>
+                            <a href="<%=userLogoutUrl%>">退出</a>
+                            <%}%>
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class='header-nav'>
+        <div class="head">
+            <div class="header-logo fl"><img src="../images/logo.png"></div>
+            <ul class="fr">
+                <li><a href="webHomeUrl/index">首页</a></li>
+                <li class="nav-fortune"><a href="webHomeUrl/fortune/fortune.html">财富专区</a></li>
+                <li><a href="http://www.na5zhe.com" target="_blank"><img class="shopimg" src="../images/shopico2.png">五折商城 </a></li>
+                <li><a href="webHomeUrl/news/index">纳觅俱乐部</a></li>
+                <li class="nav-service"><a href="webHomeUrl/services/service.html">企业服务</a></li>
+                <li><a href="webBbsUrl/topic/posted/list">社区论坛</a></li>
+                <li class="nav-about"><a href="webHomeUrl/about/about.html">走进纳觅</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+getstate();
+</script>
+<ul class="mts-fixed">
+    <li><a href="javascript:"><span style="line-height:20px; ">客服电话:<br>400-831-0855</span><i class="ficon1"></i></a></li>
+    <li><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2730456094&amp;site=qq&amp;menu=yes" target="_blank"><span>在线客服</span><i class="ficon2"></i></a></li>
+    <li><a href="webHomeUrl/suggestion/index"><span>用户反馈</span><i class="ficon3"></i></a></li>
+    <li class="viewScrllToTop" style="display: none;"><a href="#"><span>回到顶部</span><i class="ficon4"></i></a></li>
+</ul>

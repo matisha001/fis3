@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>走进纳觅</title>
+  <link rel="import" href="../common.html?__inline">
+  <link rel="stylesheet" type="text/css" href="../../css/financial.css">
+  <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+	<script src="http://api.map.baidu.com/api?v=2.0&ak=SUhhyLZWsdLZRXxRiO7igj13Rc3OPIF5" type="text/javascript"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+	<style>
+		/*地图样式*/
+		#allmap {
+			height: 370px;
+			width: 600px;
+			overflow: hidden;
+		}
+
+		#result {
+			width: 100%;
+			font-size: 12px;
+		}
+
+		dl,
+		dt,
+		dd,
+		ul,
+		li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		dt {
+			font-size: 14px;
+			font-family: "微软雅黑";
+			font-weight: bold;
+			border-bottom: 1px dotted #000;
+			padding: 5px 0 5px 5px;
+			margin: 5px 0;
+		}
+
+		dd {
+			padding: 5px 0 0 5px;
+		}
+
+		li {
+			line-height: 28px;
+		}
+
+		.type_two p:nth-of-type(6) {
+			margin-top: 15px;
+			margin-left: 60px;
+			font-size: 16px;
+			color: #777777;
+		}
+
+		.type_two p:nth-of-type(9) {
+			margin-top: 15px;
+			margin-left: 60px;
+			font-size: 16px;
+			color: #777777;
+		}
+
+		.type_two p:nth-of-type(10) {
+			margin-left: 60px;
+			font-size: 16px;
+			text-indent: 5em;
+			color: #777777;
+			margin-top: 13px;
+		}
+
+		.type_two p:nth-of-type(7) {
+			margin-top: 15px;
+			margin-left: 60px;
+			font-size: 16px;
+			color: #777777;
+		}
+
+		.type_two p:nth-of-type(8) {
+			margin-top: 15px;
+			margin-left: 60px;
+			font-size: 16px;
+			color: #777777;
+		}
+		.go-nami-title{
+			padding: 33px 0 62px;
+			text-align: center;
+			font-size: 24px;
+			line-height: 30px;
+		}
+		.tab4-contain{
+			width: 1200px;
+			margin: 0 auto;
+		}
+		.tab4-fl{
+			float: left;
+		}
+		.badu_image{
+			float: right;
+		}
+		.tab4-item2>h2{
+			font-family: "微软雅黑";
+			font-size: 20px;
+			color: #333333;
+			padding-bottom: 10px;
+		}
+		.tab4-item2>p{
+			font-family: "微软雅黑";
+			color: #333333;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			function getQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if (r != null) return decodeURIComponent(r[2]); return null;
+			}
+			var getQuery=getQueryString("id");
+			$(".go-nami>.tab").hide();
+            if(getQuery){
+                $(".go-nami>.tab"+getQuery).show();
+                $(".go-nami-banner li:eq("+(getQuery-1)+")").children("a").addClass("go-nami-tab-active")
+            }else{
+                $(".go-nami>.tab1").show()
+                $(".go-nami-banner li:eq(0)").children("a").addClass("go-nami-tab-active")
+            }
+			$(".go-nami-banner li").click(function(){
+				$(".go-nami-banner a").removeClass("go-nami-tab-active")
+				$(this).children("a").addClass("go-nami-tab-active")
+				index=$(".go-nami-banner li").index(this)+1;
+				$(".go-nami>.tab"+index).show().siblings('.tab').hide();
+			})
+		})
+	</script>
+		<style type="text/css">
+		.header .nav-about a {
+		    color: #f3981c;
+		}
+	</style>
+</head>
+<h1 style="display: none">互联网金融,理财,投资,金融,贷款,纳觅财富,第三方平台,可靠的金融机构,金融机构排名,投资理财</h1>
+<body>
+<link rel="import" href="../header.html?__inline">
+<div class="navPages">
+    <div class="navPagesTopnav">您现在的位置：<a href="webHomeUrl/index">首页＞</a><a href="#">走进纳觅</a></div>
+</div>
+<div class="go-nami-wrap">
+	<div class="go-nami-banner" style="background:url(../../images/nami-banner.png) no-repeat center 0;">
+		<ul>
+			<li class="cursor"><a>公司介绍 </a><p></p></li>
+				<li class="cursor"><a>团队成员</a><p></p></li>
+				<li class="cursor"><a>合作机构</a><p></p></li>
+				<li class="cursor"><a>联系我们</a><p></p></li>
+		</ul>
+	</div>
+	<div class="go-nami">
+		<!-- 公司介绍 -->
+		<div class="tab1 tab" style="background: url(../../images/nami-tab2-pic.png) no-repeat 0 0">
+			<div class="go-nami-overview">
+
+					<p>上海纳觅财务咨询有限公司总部位于中国的金融中心——上海，是一家立足金融、以传承财富为已任，通过互联网高端定制个性化服务客户为主的创新型信息咨询公司。</p>
+
+					<p>2017年起，借助互联网金融的高速发展，上海纳觅财务进入快速发展通道，各地分公司新开设运营中心20余家，社区金融近20家，在深挖当地市场的同时，加强泛行业之间合作，助力当地金融事业蓬勃发展；至2017年7月，纳觅财务已拥有分公司、运营中心及社区金融机构共计70余家，预计年底分支机构将达百家，全国市场战略布局将提前完成。
+					</p>
+
+				</div>
+				<div class="go-nami-pioneer">
+					<h3>2016年围绕客户需求持续创新</h3>
+					<p>2016年大唐汇金入股上海纳觅，上海纳觅由此领先于同行业的发展，有了央企的参与和背书，公司无论从风控、合规、方向上还是从长远可持续发展上都会有了强大的支持和把控。</p>
+					<br />
+					<h3>2016年围绕客户需求持续创新</h3>
+					<p>2017年5月23日，上海纳觅财务咨询有限公司登陆深圳前海股权交易中心，在深圳前海股权交易中心举行了挂牌仪式，挂牌代码367109。</p>
+				</div>
+				<div class="go-nami-company">
+					<p>立足金融，凝聚最为杰出的成功企业，汇集最具价值的项目精品，打造中国最具实效的一站式跨界资源整合互助平台。</p>
+					<p>传承财富，构建互助互强共发展的企业云生态体系，助力本土小微商超的快速发展，满足客户日益丰富的多元化高端私人服务需求。</p>
+				</div>
+				<div class="go-nami-service">
+					<p>立足金融、传承财富——以最专业的水平、最优质的服务，成为金融服务业务领域最主要的三方财富管理者。</p>
+					<p>并在此过程中，为我们的员工营造良好的发展空间并成为终身的事业平台，为我们的客户和股东实现资本的最有效增值。</p>
+				</div>
+		</div>
+		<!-- 团队成员 -->
+		<div class="tab2 tab">
+			<div class='go-nami-title'>
+				<h3>团队成员</h3>
+				<h3>Our Team</h3>
+			</div>
+			<div class="about_team">
+				<div class="about_row">
+	                <div class="team_cell">
+	                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	                        <div class="flipper">
+	                            <div class="front">
+	                                <a class="person" href="javascript:;"><img src="../../images/about/team/lzb.png" alt=""></a>
+	                                <p class="name">李金宝</p>
+	                                <p class="occupation">总裁</p>
+	                            </div>
+	                            <div class="back"><img src="../../images/about/team/lzb.png" alt="">
+	                                <div class="describe">
+	                                    <h3>总裁</h3>
+										<p>中国海洋大学EMBA总裁班，高级互联网金融理财师。拥有多年团队管理经验，具备信托，基金，保险，银行，互联网金融等从业经历。引领全国纳觅骨干团队再创佳绩、再立里程碑！实现深圳前海股权交中心挂牌(367109)，员工人数达2000人，近百家分公司！提前完成2017年全国市场战略布局。 </p>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                 <div class="team_cell">
+	                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	                        <div class="flipper">
+	                            <div class="front">
+	                                <a class="person" href="javascript:;"><img src="../../images/about/team/shl.png" alt=""></a>
+	                                <p class="name">宿红雷</p>
+	                                <p class="occupation">副总裁</p>
+	                            </div>
+	                            <div class="back"><img src="../../images/about/team/shl.png" alt="">
+	                                <div class="describe">
+	                                   <h3>副总裁</h3>
+									   <p>毕业于青岛大学，北京邮电大学EMBA总裁班，高级金融理财规划师，2014年加入上海纳觅财务咨询有限公司，原先担任烟台大区总一职，现担任纳觅副总裁。对于金融产品及财富管理行业有其独到的见解。在任职期间，秉承“创新金融”理念，整合国内外同行企业优秀的运营模式，多次为公司开拓业务新思路，助力公司业绩持续增长，拥有极其优秀的业务推动能力和团队管理经验。</p>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="team_cell">
+	                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	                        <div class="flipper">
+	                            <div class="front">
+	                                <a class="person" href="javascript:;"><img src="../../images/about/team/ppf.png" alt=""></a>
+	                                <p class="name">潘培峰</p>
+	                                <p class="occupation">人力资源总监</p>
+	                            </div>
+	                            <div class="back"><img src="../../images/about/team/ppf.png" alt="">
+	                                <div class="describe">
+	                                    <h3>人力资源总监</h3>
+										<p>UNIVERSITY OF LAGOS 管理学士，CAMBRIDGE @ TIMOTHS 工商管理学位，高级人力管理师，多年人力资源管理经验，曾就职于海外大型综合集团人力资源总监，有金融、制造、服务等行业经验，擅长战略规划、流程再造、薪酬绩效设计等人力资源模块。 </p>
+	                                    
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	               
+	               
+					<div class="team_cell">
+						<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div class="front">
+									<a class="person" href="javascript:;"><img src="../../images/about/team/zy.png" alt=""></a>
+									<p class="name">张岩</p>
+									<p class="occupation">财务总监</p>
+								</div>
+								<div class="back"><img src="../../images/about/team/zy.png" alt="">
+									<div class="describe">
+										<h3>财务总监</h3>
+										<p>澳大利亚麦考瑞大学会计硕士，多年澳洲工作经验。熟悉中外财务治理的差异，具备丰富的财务管理经验。曾从事过金融、通信、房地产行业，擅长预算与分析，为公司治理提供合理的财务规划与决策支持。</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="team_cell">
+						<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+							<div class="flipper">
+								<div class="front">
+									<a class="person" href="javascript:;"><img src="../../images/about/team/ylp.png" alt=""></a>
+									<p class="name">杨林萍</p>
+									<p class="occupation">法律顾问</p>
+								</div>
+								<div class="back"><img src="../../images/about/team/ylp.png" alt="">
+									<div class="describe">
+										<h3>法律顾问</h3>
+										<p>现任北京德和衡律师事务所律师、纳觅财富法律顾问团成员。拥有师范大学法学学士学位、美国密苏里州立大学工商管理硕士学位。从业至今已代理数百起诉讼及非诉讼法律案件、涉及民商事案件类型多样复杂，累计涉案标的数亿元；业内资深法律顾问，擅长公司法律事务、金融保险、知识产权领域。特聘为纳觅财富法律顾问团成员之一。</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					 <div class="team_cell">
+	                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	                        <div class="flipper">
+	                            <div class="front">
+	                                <a class="person" href="javascript:;"><img src="../../images/about/team/lx.png" alt=""></a>
+	                                <p class="name">刘鑫</p>
+	                                <p class="occupation">上海事业部总经理</p>
+	                            </div>
+	                            <div class="back"><img src="../../images/about/team/lx.png" alt="">
+	                                <div class="describe">
+	                                   <h3>上海事业部总经理</h3>
+									   <p>曾在中国银行任职，具备丰富的银行、保险、信托、基金等金融行业从业经验，2014年正式转入互联网金融行业，现任纳觅上海事业部总经理，具有丰富的公司管理、平台运营、业务拓展经验。</p>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+        	</div>
+		</div>
+		<!-- 合作机构 -->
+		<div class="tab3 tab">
+			<div class='go-nami-title'>
+				<h3>合作机构</h3>
+				<h3>Cooperative organization</h3>
+			</div>
+			<ul>
+				<li>
+					<img src="../../images/about/cooperorg/links-fenruixiang.png">
+					<div>
+						<h4>北京丰瑞祥信息技术有限公司</h4>
+						<p>致力于为现代化服务业提供优质的支付系统平台解决方案和国内领先的电子交易解决方案的提供者。其致力于互联网金融行业等泛金融领域，提供专业的互联网金融IT解决方案及业务咨询服务，公司已为国内众多知名支付机构提供预付卡、互联网支付、移动支付、银行卡收单、备付金校验、风控反洗钱等系统平台及方案。</p>
+					</div>
+				</li>
+				<li>
+					<img src="../../images/about/cooperorg/links-huiyingjinfu.png">
+					<div>
+						<h4>汇盈金服</h4>
+						<p>汇盈金服是美国上市公司（股票代码：SFHD）旗下创新的线上金融资产交易平台。平台通过云计算、大数据、区块链等高科技手段为中国实体经济提供创新型金融服务，使众多中小微企业、投资机构及个人获得专业、高效、便捷的投融资居间服务。</p>
+					</div>
+				</li>
+				<li>
+					<img src="../../images/about/cooperorg/links-rongdukeji.png">
+					<div>
+						<h4>杭州融都科技股份有限公司</h4>
+						<p>杭州融都科技股份有限公司于2012年6月在杭州成立，2015年4月获得恒生电子战略投资，同年8月在全国中小企业股份转让系统挂牌上市（股票代码：833102），成为全国首家登陆新三板的互联网金融软件服务商。公司总部位于杭州，在北京、上海、广州、成都均设有分支机构。</p>
+					</div>
+				</li>
+				<li>
+					<img src="../../images/about/cooperorg/links-touzhijia.png">
+					<div>
+						<h4>投之家线财富管理平台</h4>
+						<p>投之家隶属于深圳投之家金融信息服务有限公司，2014年9月16日正式上线运营，是国内专业领先的P2P网贷垂直搜索引擎。投之家拥有行业内规模较大，专业性强的网贷平台风控考察团队，累计走访了800多家P2P平台，并对200多家平台从风控、法务、财务、运营、IT等多方面进行严格的实地认证。只有通过风控团队实地认证的平台，才会被投之家收录，确保平台的真实可靠性。</p>
+					</div>
+				</li>
+				<li>
+					<img src="../../images/about/cooperorg/links-wenzhou.png">
+					<div>
+						<h4>温州金融资产交易中心</h4>
+						<p>温金中心由浙江省人民政府、温州市人民政府、温州市金融办批准成立的专业化金融资产交易机构，于2014年10月23日正式揭牌运营。浙江省财政厅批复的金融企业国有资产交易平台；温州市政府批准的不良资产挂牌处置专项平台；温州蓝海股份官方转让平台；与中国建设银行共建资金清算托管平台。</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- 联系我们 -->
+		<div class="tab4 tab clearfix">
+			<div class='go-nami-title'>
+				<h3>联系我们</h3>
+				<h3>Contact Us</h3>
+			</div>
+			<div class="tab4-contain">
+				<div class="tab4-fl tab4-item2">
+				
+				<h2>上海纳觅财务咨询有限公司</h2>
+				<p><span>网址：http://www.namiconsultant.com</span></p>
+				<p><span>地址：上海市闵行区古北路1699号 1101-1102</span></p>
+				<p><span>联系电话：021-60931709</span></p>
+				<p><span>客服邮箱：kefu@namizx.com</span></p>
+				<p><span>邮编：201103</span></p>
+						
+				</div>
+					<div class="badu_image">
+						<div id="allmap"></div>
+						</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style type="text/css">
+			
+		</style>
+<!--地图 -->
+
+<script type="text/javascript">
+  
+  var map = new BMap.Map('allmap');
+  var poi = new BMap.Point(121.409085, 31.193729);
+  map.centerAndZoom(poi, 18);
+  map.enableScrollWheelZoom();
+
+  var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
+  '<img src="${common.static.file.path}/images/logo_map.png" alt="上海纳觅财务咨询有限公司" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>' +
+  '地址：上海市闵行区古北路1699号 1101-1102<br/>电话：021-60931709<br/>深圳前海股权交易中心挂牌（代码367109），通过互联网高端定制个性化服务客户为主的创新型信息咨询公司。已实现全国分公司、运营中心、社区金融机构共70余家，预计2017年底提前完成全国市场战略布局。' +'</div>';
+
+  //创建检索信息窗口对象
+  var searchInfoWindow = null;
+  searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+    title: "上海纳觅财务咨询有限公司", //标题
+    width: 400, //宽度
+    height: 120, //高度
+    panel: "panel", //检索结果面板
+    enableAutoPan: true, //自动平移
+    searchTypes: [
+      BMAPLIB_TAB_SEARCH, //周边检索
+      BMAPLIB_TAB_TO_HERE, //到这里去
+      BMAPLIB_TAB_FROM_HERE //从这里出发
+    ]
+  });
+  var marker = new BMap.Marker(poi); //创建marker对象
+  marker.enableDragging(); //marker可拖拽
+  marker.addEventListener("click", function (e) {
+    searchInfoWindow.open(marker);
+  })
+  map.addOverlay(marker); //在地图中添加marker
+  searchInfoWindow.open(marker); //在marker上打开检索信息串口
+  //样式1
+  var searchInfoWindow1 = new BMapLib.SearchInfoWindow(map, content, {
+    title: "上海纳觅财务咨询有限公司", //标题
+    panel: "panel", //检索结果面板
+    enableAutoPan: true, //自动平移
+    searchTypes: [
+      BMAPLIB_TAB_FROM_HERE, //从这里出发
+      BMAPLIB_TAB_SEARCH //周边检索
+    ]
+  });
+
+  function openInfoWindow1() {
+    searchInfoWindow1.open(new BMap.Point(116.319852, 40.057031));
+  }
+  //样式2
+  var searchInfoWindow2 = new BMapLib.SearchInfoWindow(map, content, {
+    title: "上海纳觅财务咨询有限公司", //标题
+    panel: "panel", //检索结果面板
+    enableAutoPan: true, //自动平移
+    searchTypes: [
+      BMAPLIB_TAB_SEARCH //周边检索
+    ]
+  });
+
+  function openInfoWindow2() {
+    searchInfoWindow2.open(new BMap.Point(116.324852, 40.057031));
+  }
+  //样式3
+  var searchInfoWindow3 = new BMapLib.SearchInfoWindow(map, content, {
+    title: "上海纳觅财务咨询有限公司", //标题
+    width: 290, //宽度
+    height: 40, //高度
+    panel: "panel", //检索结果面板
+    enableAutoPan: true, //自动平移
+    searchTypes: []
+  });
+
+  function openInfoWindow3() {
+    searchInfoWindow3.open(new BMap.Point(116.328852, 40.057031));
+  }
+
+</script>
+<link rel="import" href="../footer.html?__inline">
+</body>
+</html>
