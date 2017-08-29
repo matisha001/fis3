@@ -39,12 +39,12 @@ var domain_url = {
 
 
 fis.set('project.files', [
-  'nmgw_web/css/*.css',
-  'nmgw_web/js/*.js',
-  'nmgw_web/images/**',
-  'nmgw_web/regiondata/*.json',
-  'nmgw_web/favicon.ico',
-  'nmgw_web/html/**/*.html'
+  'statics/css/*.css',
+  'statics/js/*.js',
+  'statics/images/**',
+  'statics/regiondata/*.json',
+  'statics/favicon.ico',
+  'statics/html/**/*.html'
 ]);
 
 
